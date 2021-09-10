@@ -11,14 +11,28 @@ img {
 
 .gradient {
     background: linear-gradient(45deg,hsl(169, 100%, 50%), hsl(169, 100%, 50%));
-    
+    z-index: 1;
+    height: 80px;
+    padding-top: 20px;
 }
 
 .container {
     height: 100vh;
-    background-color: white;
+    
 }
 
 .height-chat {
     height: 100vh;
+    background-image: url("https://theabbie.github.io/blog/assets/official-whatsapp-background-image.jpg");
+    background-color:white;
 }
+
+i.fas.fa-bell-slash {
+    padding: 10px;
+    background: rgb(235, 235, 229);
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+

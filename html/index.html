@@ -7,13 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
     <title>Boolzapp</title>
 </head>
 <body class="bg-secondary">
     <div id="#root" class="gradient">
         <div class="container">
             <div class="row row-cols-2 ">
-              <div class="rounded-pill  h-50 py-2 d-flex align-items-center justify-content-between" class="col">
+              <div class="bg-light h-50 py-2 d-flex align-items-center justify-content-between" class="col">
                   <div>
                     <img class="rounded-pill px-1" src="../img/avatar_io.jpg" alt=""><span class="">Paolo Dossetto</span>
                   </div>
@@ -25,7 +26,7 @@
                   </div>
                   
               </div>
-              <div class="rounded-pill  h-50 py-2 d-flex align-items-center justify-content-between" class="col">
+              <div class="bg-light h-50 py-2 d-flex align-items-center justify-content-between" >
                 <div class="bg">
                   <img class="rounded-pill px-1" src="../img/avatar_1.jpg" alt=""><span class="">Michele</span>
                 </div>
@@ -38,19 +39,40 @@
                 </div>
                 
             </div>
-              <div class="col bg-info">
-                <i class="fas fa-bell d-inline rounded-pill px-1 bg-light py-3 px-3"></i>
-                  <span>Ricevi notifiche di nuovi messaggi</span>
-                  <p class="fs-6">Attiva notifiche desktop</p>
-            </div>
-              <div class="col height-chat">Column
-                
-              </div>
-              <div class="col">
-                <i class="fas fa-search mx-3"></i><span>Cerca e inizia una nuova chat</span> </div>
-            </div>
+            <div class="bg-light py-2 d-flex justify-content-between flex-column px-0" class="col">
+              <div class="bg-info">
+                <i class="fas fa-bell-slash text-info"></i>
+                <span class="">Ricevi notiche e nuovi messaggi</span>
+                <p class="fs-6 text-secondary text-decoration-underline mx-5">Attiva notifiche desktop</p>
+                <nav class="navbar navbar-light bg-light">
+                  <div class="container-fluid">
+                    <form class="d-flex">
+                      <button class="btn" type="submit"> <i class="fas fa-search mx-2 px-1"></i></i></button>
+                      <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                     
+                    </form>
+                  </div>
+                </nav>
+              </div>   
+             
+                                    
           </div>
-    </div>
+          
+
+          
+              <div class="col height-chat">
+                <nav class="navbar navbar-light bg-light position-absolute bottom-0 right">
+                  <div class="container-fluid">
+                    <form class="d-flex">
+                      <button class="btn" type="submit"><i class="far fa-grin-tears"></i></button>
+                      <input class="form-control me-2" type="search" placeholder="Inizia una nuova chat" aria-label="Search">
+                      <button class="btn" type="submit"><i class="fas fa-microphone"></i></button>
+                    </form>
+                  </div>
+                </nav>
+              </div>
+              <!-- parte di logica -->
+       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="../js/main.js"></script>
