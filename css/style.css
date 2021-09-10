@@ -18,7 +18,7 @@ div > img {
 
 .container {
     height: 100vh;
-    
+    margin: auto;
 }
 
 .height-chat {
@@ -41,6 +41,10 @@ i.fas.fa-bell-slash {
 
 .red {
     color: red;
+}
+
+.showText {
+    display: none;
 }
 
 

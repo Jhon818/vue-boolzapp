@@ -90,9 +90,9 @@ const app = new Vue ( {
   
 
 methods: {
-    trueFalse(index) {
-        if (this.toDos[index].done === true) {
-          this.toDos[index].done = false;
+    clicked(index) {
+        if (this.contant.name.checked) {
+         return 
         }
         else{
           this.toDos[index].done = true;
