@@ -1,0 +1,24 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+
+img {
+    width: 50px;
+}
+
+.gradient {
+    background: linear-gradient(45deg,hsl(169, 100%, 50%), hsl(169, 100%, 50%));
+    
+}
+
+.container {
+    height: 100vh;
+    background-color: white;
+}
+
+.height-chat {
+    height: 100vh;
+}
