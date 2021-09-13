@@ -32,11 +32,11 @@
 
         </div>
         <div class="bg-light d-flex align-items-center justify-content-between col-lg-6">
-          <div class="d-flex" v-show="[currentActiveUser]">
+          <div class="d-flex" v-show="[currentActiveUser]" :class="contacts[currentActiveUser].name">
             <img :src="'../img/avatar_' + [currentActiveUser + 1] + '.jpg'" class="rounded-pill">
                
             <span class="w-100 mx-2" style="line-height: 10px;">
-              <p class="my-2"></p>
+              <p class="my-2">{{name}}</p>
               <p class="text-secondary">Ultimo accesso oggi alle</p>
             </span>
           </div>
