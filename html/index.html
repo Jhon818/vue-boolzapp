@@ -49,9 +49,21 @@
         </div>
         <div class="bg-light py-2 d-flex justify-content-between flex-column px-0 col-lg-5">
           <div class="bg-info col-lg-12">
-            <i class="fas fa-bell-slash text-info"></i>
-            <span class="">Ricevi notiche e nuovi messaggi</span>
-            <p class="fs-6 text-secondary text-decoration-underline mx-5">Attiva notifiche desktop</p>
+           
+            <div class="d-flex align-items-start px-3">
+              <div class="d-flex align-self-center">
+                <i class="fas fa-bell-slash text-info"></i>
+              </div>
+              
+              <div class="d-flex flex-column align-self-center mx-2 my-2">
+                <span>Ricevi notiche e nuovi messaggi</span> 
+                <p class="fs-6 text-secondary text-decoration-underline">Attiva notifiche desktop</p>
+              </div>             
+            </div>
+            
+            
+
+           
             <nav class="navbar navbar-light bg-light">
               <div class="container-fluid">
                 <form class="d-flex w-100">
@@ -61,8 +73,8 @@
                 </form>
               </div>
             </nav>
-            <div >
-              <div v-for="(contact, index) in contacts">
+            <div class="overflow-scroll bg-light">
+              <div v-for="(contact, index) in contacts" class="px-2 py-2" id="btn"  @click="clicked(contact)">
                 
                 <img :src="'../img/avatar' + contact.avatar + '.jpg'" class="rounded-pill">
                 {{contact.name}}
@@ -76,11 +88,11 @@
 
         <div class="height-chat position-relative col-lg-6">
           
-          <div class="col-lg-12">
-            <div v-for="(message, index) in contacts[0].messages">           
+          <div class="col-lg-12" >
+            <div :class="clicked(message,index,contacts)" class="messages-style" v-for="(message, index) in contacts[0].messages">           
                 
-              <span :class="message.status === 'sent' ? 'green' : 'red'" v-show="showText" >{{message.message}}</span>     
-
+              <span :class="message.status === 'sent' ? 'green' : 'white'">{{message.message}}</span>     
+            
             </div>
           </div>
           

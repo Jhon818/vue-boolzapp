@@ -88,17 +88,16 @@ const app = new Vue ( {
         ],
     },
   
-
+created(){
+     this.contacts.avatar = currentAvatar;
+    console.log(currentAvatar)
+},
 methods: {
-    clicked(index) {
-        if (this.contant.name.checked) {
-         return 
-        }
-        else{
-          this.toDos[index].done = true;
-        }
-      },
+    clicked(message,index,currentAvatar) {
+       if(currentAvatar.checked) {
+       console.log(message.message)
+       }
 },
 
-}
+}}
 );
