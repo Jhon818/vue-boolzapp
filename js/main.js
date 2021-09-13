@@ -86,18 +86,12 @@ const app = new Vue ( {
             
             
         ],
+        currentActiveUser: 0
     },
   
-created(){
-     this.contacts.avatar = currentAvatar;
-    console.log(currentAvatar)
-},
-methods: {
-    clicked(message,index,currentAvatar) {
-       if(currentAvatar.checked) {
-       console.log(message.message)
-       }
-},
-
-}}
-);
+    methods: {
+        clicked(index) {
+            this.currentActiveUser = index;
+        },
+    }
+});

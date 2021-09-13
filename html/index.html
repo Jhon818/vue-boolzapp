@@ -32,10 +32,11 @@
 
         </div>
         <div class="bg-light d-flex align-items-center justify-content-between col-lg-6">
-          <div class="d-flex">
-            <img class="rounded-pill py-2 px-1" src="../img/avatar_1.jpg" alt="">
+          <div class="d-flex" v-show="[currentActiveUser]">
+            <img :src="'../img/avatar_' + [currentActiveUser + 1] + '.jpg'" class="rounded-pill">
+               
             <span class="w-100 mx-2" style="line-height: 10px;">
-              <p class="my-2">Michele</p>
+              <p class="my-2"></p>
               <p class="text-secondary">Ultimo accesso oggi alle</p>
             </span>
           </div>
@@ -74,7 +75,7 @@
               </div>
             </nav>
             <div class="overflow-scroll bg-light">
-              <div v-for="(contact, index) in contacts" class="px-2 py-2" id="btn"  @click="clicked(contact)">
+              <div v-for="(contact, index) in contacts" class="px-2 py-2" id="btn"  @click="clicked(index,contact)">
                 
                 <img :src="'../img/avatar' + contact.avatar + '.jpg'" class="rounded-pill">
                 {{contact.name}}
@@ -88,11 +89,13 @@
 
         <div class="height-chat position-relative col-lg-6">
           
-          <div class="col-lg-12" >
-            <div :class="clicked(message,index,contacts)" class="messages-style" v-for="(message, index) in contacts[0].messages">           
+          <div class="col-lg-12">
+            <div :class="currentActiveUser" class="messages-style w-50" v-for="(message, index) in contacts[currentActiveUser].messages">           
                 
-              <span :class="message.status === 'sent' ? 'green' : 'white'">{{message.message}}</span>     
-            
+              <span :class="message.status === 'sent' ? 'green' : 'white'">{{message.message}} 
+                <span class="message-date">{{message.date}}</span>
+              </span>    
+
             </div>
           </div>
           
