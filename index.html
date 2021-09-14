@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../vue-boolzapp/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet"  href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <!-- CDN example (unpkg) -->
-<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-<script>dayjs().format()</script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
 
   <title>Boolzapp</title>
 </head>
@@ -25,7 +25,7 @@
       <div class="row row-cols-2 row-cols-2 d-flex justify-content-center">
         <div class="bg-light h-50 py-2 d-flex align-items-center justify-content-between col-lg-5">
           <div>
-            <img class="rounded-pill px-1" src="../vue-boolzapp/img/avatar_io.jpg" alt=""><span class="">Paolo Dossetto</span>
+            <img class="rounded-pill px-1" src="img/avatar_io.jpg" alt=""><span class="">Paolo Dossetto</span>
           </div>
 
           <div class="d-flex mx-2 px-2 text-secondary">
@@ -81,7 +81,7 @@
             <div class="overflow-scroll bg-light">
               <div v-for="(contact, index) in contacts" class="px-2 py-2" id="btn"  @click="clicked(index,contact)">
                 
-                <img :src="'../vue-boolzapp/img/avatar' + contact.avatar + '.jpg'" class="rounded-pill">
+                <img :src="'img/avatar' + contact.avatar + '.jpg'" class="rounded-pill">
                 {{contact.name}}
                 
               </div>
@@ -121,7 +121,7 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-      <script src="../vue-boolzapp/js/main.js"></script>
+      <script src="js/main.js"></script>
 </body>
 
 </html>
