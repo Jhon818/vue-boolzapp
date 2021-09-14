@@ -115,8 +115,15 @@ console.log(this.newMessage)
                 status: "received",
         });
           }, 1000);
-          
-        }
+        },
+
+        filterContact() {
+           if (this.contacts.name) {
+             return this.contacts.avatar
+           }
+          },
+
+        
     
     }
 });
