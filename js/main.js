@@ -2,6 +2,8 @@ Vue.config.devtools = true;
 const app = new Vue ( {
     el: "#root",
     data: {
+        filter: "",
+        contactFilter: [],
         contacts: [
             {
                 name: 'Michele',
@@ -90,6 +92,10 @@ const app = new Vue ( {
         newMessage:"",
         okMessage: "OK",
     },
+
+    mounted() {
+this.contactFilter = this.contacts;
+    },
   
     methods: {
         clicked(index) {
@@ -104,7 +110,6 @@ const app = new Vue ( {
         status: "sent",
 });
 this.newMessage = ""
-console.log(this.newMessage)
         },
 
         addOk() {
@@ -118,9 +123,13 @@ console.log(this.newMessage)
         },
 
         filterContact() {
-           if (this.contacts.name) {
-             return this.contacts.avatar
+           if (!this.filter) {
+             this.contactFilter = this.contacts;
            }
+           else {
+               this.contactFilter = this.contacts.filter(x => x.name.toLowerCase().includes(this.filter.toLowerCase()));
+           }
+           console.log(this.contactFilter);
           },
 
         
