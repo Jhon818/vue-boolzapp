@@ -12,7 +12,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"  href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <!-- CDN example (unpkg) -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   <title>Boolzapp</title>
 </head>
@@ -39,7 +38,7 @@
                
             <span class="w-100 mx-2" style="line-height: 10px;">
               <p class="my-2">{{contacts[currentActiveUser].name}}</p>
-              <p class="text-secondary">Ultimo accesso oggi alle </p>
+              <p class="text-secondary" v-bind:online="online">Ultimo accesso oggi alle {{online}}</p>
             </span>
           </div>
 
@@ -91,15 +90,27 @@
         <div class="height-chat position-relative col-lg-6">
           <div class="col-lg-12 h-100">
             <div :class="currentActiveUser"  v-for="(message, index) in contacts[currentActiveUser].messages">          
-              <span class="messages-style w-50" :class="message.status === 'sent' ? 'green' : 'white'">{{message.message}} 
+              <span class="messages-style w-50 position-relative" :class="message.status === 'sent' ? 'green' : 'white'">
+                {{message.message}} 
                 <span class="message-date">{{message.date}}</span>
+
+                <div class="btn-group position-absolute end-0 top-0">
+                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Message Info</a></li>
+                    <li><a @click="deleteItem(index)"  class="dropdown-item">Delate Message</a></li>
+                  </ul>
+                </div>
+
+
               </span>    
             </div>
           </div>
 <!-- da correggiere la position -->
             <div class="d-flex w-100 fixed-bottom position-absolute position-sticky height-keyboard">
                 <button class="btn bg-info" type="submit"><i class="far fa-grin-tears"></i></button>
-                <input class="form-control px-1" type="search" placeholder="Inizia una nuova chat" aria-label="Search" v-on:keydown.enter="addMessage()"  v-on:keyup.enter="addOk()" v-model="newMessage">
+                <input v-for="(message, index) in contacts[currentActiveUser].messages" class="form-control px-1" type="search" placeholder="Inizia una nuova chat" aria-label="Search" v-on:keydown.enter="addMessage()"  v-on:keyup.enter="addOk()" v-model="newMessage">
                 <button class="btn bg-light" type="submit"><i class="fas fa-microphone"></i></button>
             </div>
             

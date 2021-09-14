@@ -4,6 +4,7 @@ const app = new Vue ( {
     data: {
         filter: "",
         contactFilter: [],
+        online: dayjs().format("hh:mm"),
         contacts: [
             {
                 name: 'Michele',
@@ -130,6 +131,10 @@ this.newMessage = ""
                this.contactFilter = this.contacts.filter(x => x.name.toLowerCase().includes(this.filter.toLowerCase()));
            }
            console.log(this.contactFilter);
+          },
+
+          deleteItem(index) {
+            this.contacts[this.currentActiveUser].messages.splice(index,1);
           },
 
         
