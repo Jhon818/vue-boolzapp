@@ -12,6 +12,10 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!-- CDN example (unpkg) -->
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script>dayjs().format()</script>
+
   <title>Boolzapp</title>
 </head>
 
@@ -68,9 +72,9 @@
             <nav class="navbar navbar-light bg-light">
               <div class="container-fluid">
                 <form class="d-flex w-100">
-                  <button class="btn" type="submit"> <i class="fas fa-search mx-2 px-1"></i></i></button>
+                  <button class="btn" type="submit"><i class="fas fa-search mx-2 px-1"></i></i></button>
                   <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat"
-                    aria-label="Search">
+                    aria-label="Search" value="" v-on:keyup="value" v-if="value == contacts.name">
                 </form>
               </div>
             </nav>
@@ -90,24 +94,23 @@
         <div class="height-chat position-relative col-lg-6">
           
           <div class="col-lg-12">
-            <div :class="currentActiveUser" class="messages-style w-50" v-for="(message, index) in contacts[currentActiveUser].messages">           
+            <div :class="currentActiveUser"  v-for="(message, index) in contacts[currentActiveUser].messages">           
                 
-              <span :class="message.status === 'sent' ? 'green' : 'white'">{{message.message}} 
+              <span class="messages-style w-50" :class="message.status === 'sent' ? 'green' : 'white'">{{message.message}} 
                 <span class="message-date">{{message.date}}</span>
               </span>    
 
             </div>
           </div>
           
-          <nav class="navbar navbar-light bg-light position-absolute bottom-0 right w-100 end-0">
-            <div class="container-fluid">
-              <form class="d-flex w-100">
-                <button class="btn" type="submit"><i class="far fa-grin-tears"></i></button>
-                <input class="form-control px-1" type="search" placeholder="Inizia una nuova chat" aria-label="Search">
-                <button class="btn" type="submit"><i class="fas fa-microphone"></i></button>
-              </form>
+         
+            
+              <div class="d-flex w-100 fixed-bottom position-absolute">
+                <button class="btn bg-info" type="submit"><i class="far fa-grin-tears"></i></button>
+                <input class="form-control px-1" type="search" placeholder="Inizia una nuova chat" aria-label="Search" v-on:keydown.enter="addMessage()"  v-on:keyup.enter="addOk()">
+                <button class="btn bg-light" type="submit"><i class="fas fa-microphone"></i></button>
             </div>
-          </nav>
+          
         </div>
       </div>
       </div>

@@ -86,12 +86,37 @@ const app = new Vue ( {
             
             
         ],
-        currentActiveUser: 0
+        currentActiveUser: 0,
+        newMessage:"",
+        okMessage: "OK",
     },
   
     methods: {
         clicked(index) {
             this.currentActiveUser = index;
         },
+
+        // aggiungere un messaggio al click di enter tramite la funzione addMessage 
+        addMessage(newMessage) {
+    this.contacts[this.currentActiveUser].messages.push({
+        date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
+        message: toString(newMessage),
+        status: "sent",
+});
+this.newMessage = ""
+console.log(this.newMessage)
+        },
+
+        addOk() {
+          setTimeout(() => {
+            this.contacts[this.currentActiveUser].messages.push({
+                date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
+                message: this.okMessage,
+                status: "received",
+        });
+          }, 1000);
+          
+        }
+    
     }
 });
