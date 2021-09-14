@@ -73,4 +73,11 @@ span.messages-style {
     margin: 15px;
 }
 
+.overflow-y {
+    overflow-y: scroll;
+}
+
+.height-keyboard {
+    
+}
 

@@ -97,10 +97,10 @@ const app = new Vue ( {
         },
 
         // aggiungere un messaggio al click di enter tramite la funzione addMessage 
-        addMessage(newMessage) {
+        addMessage() {
     this.contacts[this.currentActiveUser].messages.push({
         date: dayjs().format("DD/MM/YYYY hh:mm:ss"),
-        message: toString(newMessage),
+        message: this.newMessage,
         status: "sent",
 });
 this.newMessage = ""
