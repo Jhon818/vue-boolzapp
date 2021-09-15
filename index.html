@@ -142,8 +142,8 @@
                 <div class="d-inline">
                   <span>{{contact.name}}</span>
                   <div class="d-flex text-secondary">
-                    <span class="d-block text-secondary">{{online}}</span>
-                     <!-- <span></span> -->
+                    <span class="d-block text-secondary px-1">{{lastMessage(contact).date}}</span>
+                     <span>{{lastMessage(contact).message}}</span>
                     <span><i class="fas fa-check-double"></i></span>
                   </div>
                 </div> 

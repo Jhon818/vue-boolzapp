@@ -138,6 +138,9 @@ this.newMessage = ""
             this.contacts[this.currentActiveUser].messages.splice(index,1);
           },
 
+          lastMessage(contact) {
+            return contact.messages[contact.messages.length - 1]
+          }
         
     
     }

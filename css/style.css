@@ -73,6 +73,7 @@ span.messages-style {
 
 .overflow-y {
     overflow-y: scroll;
+    height: 40vh;
 }
 
 .top-20 {
