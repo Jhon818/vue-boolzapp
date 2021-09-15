@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"  href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <link rel="stylesheet"  href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   <title>Boolzapp</title>
 </head>
 
@@ -25,33 +25,97 @@
             <img class="rounded-pill px-1" src="img/avatar_io.jpg" alt=""><span class="">Nome Utente</span>
           </div>
 
-          <div class="d-flex mx-2 px-2 text-secondary">
-            <i class="fas fa-circle-notch mx-2 px-1"></i>
-            <i class="fas fa-comment-alt mx-2 px-1"></i>
-            <i class="fas fa-ellipsis-v mx-2 px-1"></i>
+          <div class="d-flex mx-2 px-2">
+            <i class="fas fa-circle-notch mx-2 px-1 text-secondary btn"></i>
+            <i class="fas fa-comment-alt mx-2 px-1 text-secondary btn"></i>
+            <div class="btn-group">
+              <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-ellipsis-v mx-2 text-secondary px-1"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">New group</li>
+                <li class="dropdown-item">New broadcast</li>
+                <li class="dropdown-item">Linked devices</li>
+                <li class="dropdown-item">Starred messages</li>
+                <li class="dropdown-item">Settings</li>
+              </ul>
+            </div>
+            
           </div>
 
         </div>
         <div class="bg-light d-flex align-items-center justify-content-between col-lg-6">
           <div class="d-flex" v-show="[currentActiveUser]" :class="contacts[currentActiveUser].name">
-            <img :src="'../vue-boolzapp/img/avatar_' + [currentActiveUser + 1] + '.jpg'" class="rounded-pill">
-               
-            <span class="w-100 mx-2" style="line-height: 10px;">
-              <p class="my-2">{{contacts[currentActiveUser].name}}</p>
-              <p class="text-secondary" v-bind:online="online">Ultimo accesso oggi alle {{online}}</p>
+            <img :src="'img/avatar_' + [currentActiveUser + 1] + '.jpg'" class="rounded-pill"> 
+              <span class="w-100 mx-2" style="width: 50px; height: 10px;">
+                <p class="my-2">{{contacts[currentActiveUser].name}}</p>
+              <p class="text-secondary position-absolute top-20" v-bind:online="online">Ultimo accesso oggi alle {{online}}</p>
             </span>
           </div>
-
           <div class="d-flex mx-2 px-2 text-secondary">
-            <i class="fas fa-search mx-2 px-1"></i>
-            <i class="fas fa-paperclip mx-2 px-1"></i>
-            <i class="fas fa-ellipsis-v mx-2 px-1"></i>
+             <i class="fas fa-circle-notch mx-2 px-1 text-secondary btn"></i>
+             <div class="btn-group">
+              <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-paperclip mx-2 text-secondary px-1"></i>
+              </button>
+              <ul class="dropdown-menu files-group-style">
+                <div class="d-flex">
+                  <li class="dropdown-item d-flex flex-column justify-content-center">
+                    <div class="rounded-circle bg-info d-flex justify-content-center">
+                      <i class="fas fa-file"></i>
+                    </div>
+                  </li>
+                  <li class="dropdown-item d-flex flex-column justify-content-center">
+                    <div class="rounded-circle bg-info d-flex justify-content-center">
+                      <i class="fas fa-camera"></i>
+                    </div>
+                  </li>
+                  <li class="dropdown-item d-flex flex-column justify-content-center">
+                    <div class="rounded-circle bg-info d-flex justify-content-center">
+                      <i class="fas fa-images"></i>
+                    </div>
+                  </li>
+                  <li class="dropdown-item d-flex flex-column justify-content-center">
+                    <div class="rounded-circle bg-info d-flex justify-content-center">
+                      <i class="fas fa-headphones-alt"></i>
+                    </div>
+                  </li>
+                  <li class="dropdown-item d-flex flex-column justify-content-center">
+                    <div class="rounded-circle bg-info d-flex justify-content-center">
+                      <i class="fas fa-video"></i>
+                    </div>
+                  </li>
+                  <li class="dropdown-item d-flex flex-column justify-content-center">
+                    <div class="rounded-circle bg-info d-flex justify-content-center">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                  </li>
+                  <li class="dropdown-item d-flex flex-column justify-content-center">
+                    <div class="rounded-circle bg-info d-flex justify-content-center">
+                      <i class="fas fa-address-book"></i>
+                    </div>
+                  </li>
+                </div>
+              </ul>
+            </div>
+           
+            <div class="btn-group">
+              <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-ellipsis-v mx-2 text-secondary px-1"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">New group</li>
+                <li class="dropdown-item">New broadcast</li>
+                <li class="dropdown-item">Linked devices</li>
+                <li class="dropdown-item">Starred messages</li>
+                <li class="dropdown-item">Settings</li>
+              </ul>
+            </div>
           </div>
-
         </div>
+        
         <div class="bg-light py-2 d-flex justify-content-between flex-column px-0 col-lg-5">
           <div class="bg-info col-lg-12">
-           
             <div class="d-flex align-items-start px-3">
               <div class="d-flex align-self-center">
                 <i class="fas fa-bell-slash text-info"></i>
@@ -63,9 +127,6 @@
               </div>             
             </div>
             
-            
-
-           
             <nav class="navbar navbar-light bg-light">
               <div class="container-fluid">
                 <form class="d-flex w-100">
@@ -74,51 +135,62 @@
                 </form>
               </div>
             </nav>
+
             <div class="bg-light overflow-y">
-              <div v-for="(contact, index) in contactFilter" class="px-2 py-2" id="btn"  @click="clicked(index,contact)">
-                
+              <div v-for="(contact, index) in contactFilter" class="px-2 py-2" id="btn"  @click="clicked(index,contact)" v-bind:online="online" >
                 <img :src="'img/avatar' + contact.avatar + '.jpg'" class="rounded-pill">
-                {{contact.name}}
-                
+                <span>{{contact.name}}</span>
+                <!-- <p class="text-secondary">{{online}} {{contact.messages[index,2]}}</p> -->
               </div>
             </div>
           </div>
         </div>
 
-
-
         <div class="height-chat position-relative col-lg-6">
+
           <div class="col-lg-12 h-100">
             <div :class="currentActiveUser"  v-for="(message, index) in contacts[currentActiveUser].messages">          
               <span class="messages-style w-50 position-relative" :class="message.status === 'sent' ? 'green' : 'white'">
                 {{message.message}} 
                 <span class="message-date">{{message.date}}</span>
+                  <p class="position-absolute bottom-0 end-0 text-primary px-1"><i class="fas fa-check-double"></i></p>
 
                 <div class="btn-group position-absolute end-0 top-0">
-                  <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item">Message Info</a></li>
-                    <li><a @click="deleteItem(index)"  class="dropdown-item">Delate Message</a></li>
-                  </ul>
+                  <button class="btn btn-sm text-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-chevron-circle-down"></i></button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item">Message Info</a></li>
+                      <li><a @click="deleteItem(index)"  class="dropdown-item">Delate Message</a></li>
+                    </ul>
                 </div>
-
-
               </span>    
             </div>
           </div>
-<!-- da correggiere la position -->
-            <div class="d-flex w-100 fixed-bottom position-absolute position-sticky height-keyboard">
+
+            <div class="d-flex w-100 fixed-bottom position-absolute position-sticky">
                 <button class="btn bg-info" type="submit"><i class="far fa-grin-tears"></i></button>
-                <input v-for="(message, index) in contacts[currentActiveUser].messages" class="form-control px-1" type="search" placeholder="Inizia una nuova chat" aria-label="Search" v-on:keydown.enter="addMessage()"  v-on:keyup.enter="addOk()" v-model="newMessage">
-                <button class="btn bg-light" type="submit"><i class="fas fa-microphone"></i></button>
+            <input class="form-control px-1 d-block" type="search" placeholder="Inizia una nuova chat" aria-label="Search"  v-on:keydown.enter="addMessage()" v-on:keyup.enter="addOk()" v-model="newMessage">
+            <div class="btn-group dropup">
+              <button class="btn bg-info" data-bs-toggle="dropdown" aria-expanded="false" class="btn bg-light" type="submit">
+                <i class="fas fa-microphone"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="bg-info rounded-circle">
+                  <div class="text-center">
+                    <i class="fas fa-microphone text-primary"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+                <button  v-on:click="addMessage()" v-on:click="addOk()" class="btn bg-light" type="submit">
+                  <i class="fas fa-share"></i>
+                </button>
             </div>
             
            </div>
           </div>
         </div>
       </div>
-      <!-- parte di logica -->
+
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
