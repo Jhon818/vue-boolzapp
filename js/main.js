@@ -132,7 +132,6 @@ this.newMessage = ""
            else {
                this.contactFilter = this.contacts.filter(x => x.name.toLowerCase().includes(this.filter.toLowerCase()));
            }
-           console.log(this.contactFilter);
           },
 
           deleteItem(index) {

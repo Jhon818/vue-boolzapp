@@ -139,8 +139,14 @@
             <div class="bg-light overflow-y">
               <div v-for="(contact, index) in contactFilter" class="px-2 py-2" id="btn"  @click="clicked(index,contact)" v-bind:online="online" >
                 <img :src="'img/avatar' + contact.avatar + '.jpg'" class="rounded-pill">
-                <span>{{contact.name}}</span>
-                <!-- <p class="text-secondary">{{online}} {{contact.messages[index,2]}}</p> -->
+                <div class="d-inline">
+                  <span>{{contact.name}}</span>
+                  <div class="d-flex text-secondary">
+                    <span class="d-block text-secondary">{{online}}</span>
+                     <!-- <span></span> -->
+                    <span><i class="fas fa-check-double"></i></span>
+                  </div>
+                </div> 
               </div>
             </div>
           </div>
